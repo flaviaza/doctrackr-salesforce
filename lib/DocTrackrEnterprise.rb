@@ -51,7 +51,7 @@ module DocTrackrEnterprise
       'policy[verify_identity]' => 'false',
       'policy[privileges][can_view]' => 'everyone',
       'callback_url' => callback,
-      'fileupload' => Faraday::UploadIO.new(file[:tempfile].path, file[:type], file[:filename])
+      'fileupload' => Faraday::UploadIO.new(file.path, file.tempfile, file.original_filename)
     }
 
     # puts params # debug
