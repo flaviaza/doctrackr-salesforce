@@ -42,7 +42,7 @@ class DocumentsController < ApplicationController
   # POST /documents.json
   def create
     @document = Document.new(params[:document])
-    @document.name = @document.file[:filename]
+    @document.name = @document.file.original_filename
     @document.status = 'pending'
     dt = DocTrackrEnterprise.new()
     @document.dt_reference = dt.secure_document(@document.file, "https://doctrackr-salesforce.herokuapp.com/documents/callback")
