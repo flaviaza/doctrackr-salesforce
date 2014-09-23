@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  dt_reference: 1
+  sf_reference: MyString
+  last_event_at: 2014-09-22 22:46:41
+
+two:
+  name: MyString
+  dt_reference: 1
+  sf_reference: MyString
+  last_event_at: 2014-09-22 22:46:41

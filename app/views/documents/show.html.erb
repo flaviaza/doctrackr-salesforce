@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @document.name %>
+</p>
+
+<p>
+  <b>Dt reference:</b>
+  <%= @document.dt_reference %>
+</p>
+
+<p>
+  <b>Sf reference:</b>
+  <%= @document.sf_reference %>
+</p>
+
+<p>
+  <b>Last event at:</b>
+  <%= @document.last_event_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>
