@@ -84,4 +84,9 @@ class DocumentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def callback
+    @document = Document.find_by_dt_reference(params[:document_id])
+    @document.update_attribute(status: 'active')
+  end
 end

@@ -1,5 +1,7 @@
 DoctrackrSalesforce::Application.routes.draw do
-  resources :documents
+  resources :documents do
+    get 'callback', as: :member
+  end
 
 
   resources :users
