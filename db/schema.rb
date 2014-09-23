@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140923044641) do
+ActiveRecord::Schema.define(:version => 20140923180119) do
 
   create_table "documents", :force => true do |t|
     t.string   "name"
-    t.integer  "dt_reference"
+    t.integer  "dt_reference",  :limit => 8
     t.string   "sf_reference"
     t.datetime "last_event_at"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
@@ -27,10 +28,11 @@ ActiveRecord::Schema.define(:version => 20140923044641) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "sf_reference"
+    t.string   "sf_reference_username"
     t.string   "refresh_token"
     t.string   "oauth_token"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
 end
