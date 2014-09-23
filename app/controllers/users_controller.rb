@@ -58,7 +58,7 @@ class UsersController < ApplicationController
         refresh_token: @canvasRequest["client"]["refreshToken"],
         oauth_token: @canvasRequest["client"]["oauthToken"])
     end
-    redirect_to new_documents_path, current_user: @current_user.try(:id)
+    redirect_to new_document_path, current_user: @current_user.try(:id)
   end
 
   # PUT /users/1
