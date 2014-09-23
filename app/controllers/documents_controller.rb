@@ -1,3 +1,5 @@
+use DocTrackrEnterprise
+
 class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
@@ -42,7 +44,11 @@ class DocumentsController < ApplicationController
   # POST /documents.json
   def create
     @document = Document.new(params[:document])
-    raise @document.file.inspect
+    @document.name = @document.file[:filename]
+    @document.status = 'pending'
+    dt = DocTrackrEnterprise.new()
+    @document.dt_reference = dt.secure_document(@document.file, "https://doctrackr-salesforce.herokuapp.com/documents/callback")
+
     respond_to do |format|
       if @document.save
         format.html { redirect_to @document, notice: 'Document was successfully created.' }
