@@ -1,4 +1,4 @@
-use DocTrackrEnterprise
+include DocTrackrEnterprise
 
 class DocumentsController < ApplicationController
   # GET /documents
