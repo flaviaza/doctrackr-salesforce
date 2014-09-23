@@ -49,7 +49,10 @@ class UsersController < ApplicationController
     @canvasRequest = JSON.parse(@canvasRequestJson)
     @current_user = nil
 
-    unless @current_user = User.find_by_email(@canvasRequest["context"]["user"]["email"])
+    if @current_user = User.find_by_email(@canvasRequest["context"]["user"]["email"])
+      @current_user.update_attributes(refresh_token: @canvasRequest["client"]["refreshToken"],
+        oauth_token: @canvasRequest["client"]["oauthToken"])
+    else
       @current_user = User.create(email: @canvasRequest["context"]["user"]["email"],
         sf_reference_username: @canvasRequest["context"]["user"]["userName"],
         first_name: @canvasRequest["context"]["user"]["firstName"],
@@ -58,7 +61,8 @@ class UsersController < ApplicationController
         refresh_token: @canvasRequest["client"]["refreshToken"],
         oauth_token: @canvasRequest["client"]["oauthToken"])
     end
-    redirect_to new_document_path, current_user: @current_user.try(:id)
+    session[:user_id] = @current_user.id
+    redirect_to new_document_path
   end
 
   # PUT /users/1

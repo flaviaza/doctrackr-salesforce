@@ -24,7 +24,8 @@ class DocumentsController < ApplicationController
   # GET /documents/new
   # GET /documents/new.json
   def new
-    @document = Document.new
+    @current_user = User.find(session[:user_id])
+    @document = @current_user.documents.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +42,7 @@ class DocumentsController < ApplicationController
   # POST /documents.json
   def create
     @document = Document.new(params[:document])
-
+    raise @document.file.inspect
     respond_to do |format|
       if @document.save
         format.html { redirect_to @document, notice: 'Document was successfully created.' }
