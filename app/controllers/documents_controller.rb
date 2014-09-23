@@ -1,5 +1,3 @@
-include DocTrackrEnterprise
-
 class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
