@@ -24,8 +24,9 @@ class DocumentsController < ApplicationController
   # GET /documents/new
   # GET /documents/new.json
   def new
-    @current_user = User.find(session[:user_id])
-    @document = @current_user.documents.new
+    #@current_user = User.find(session[:user_id])
+    #@document = @current_user.documents.new
+    @document = Document.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -46,7 +47,7 @@ class DocumentsController < ApplicationController
     @document.user = @current_user
     @document.name = @document.file.original_filename
     @document.status = 'pending'
-    @document.dt_reference = DocTrackrEnterprise.secure_document(@document.file, "https://doctrackr-salesforce.herokuapp.com/documents/callback")
+    #@document.dt_reference = DocTrackrEnterprise.secure_document(@document.file, "https://doctrackr-salesforce.herokuapp.com/documents/callback")
 
     respond_to do |format|
       if @document.save
