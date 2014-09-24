@@ -9,6 +9,7 @@ class Document < ActiveRecord::Base
 
   def post_document_protected
     dt_document = DocTrackrEnterprise.get_document_info(dt_reference.to_s)
+    puts dt_document.inspect
     data = {
       body: {
         messageSegments: [
