@@ -91,5 +91,6 @@ class DocumentsController < ApplicationController
     @document = Document.find_by_dt_reference(params[:document_id])
     @document.update_attribute(:status, 'active')
     @document.post_document_protected
+    redirect_to @document
   end
 end

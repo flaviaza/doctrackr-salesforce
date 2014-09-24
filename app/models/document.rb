@@ -23,6 +23,7 @@ class Document < ActiveRecord::Base
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     response = http.post(uri.path,data.to_json,headers)
+    puts response.inspect
   end
 
   def file=(attribute)
