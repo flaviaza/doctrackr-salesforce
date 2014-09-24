@@ -1,6 +1,8 @@
 DoctrackrSalesforce::Application.routes.draw do
   resources :documents do
-    get 'callback', as: :collection
+    collection do
+      get 'callback'
+    end
   end
 
 
