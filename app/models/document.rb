@@ -35,5 +35,4 @@ class Document < ActiveRecord::Base
     @file
   end
 
-  handle_asynchronously post_document_protected
 end
