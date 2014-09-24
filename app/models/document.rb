@@ -5,7 +5,7 @@ class Document < ActiveRecord::Base
 
   belongs_to :user
   TARGET_ORIGIN = "https://intralinks--poc1.cs8.my.salesforce.com"
-  CHATTER_FEED = "/services/data/v31.0/chatter/feed-elements"
+  CHATTER_FEED = "/services/data/v31.0/chatter"
 
   def post_document_protected
     data = {
@@ -17,7 +17,7 @@ class Document < ActiveRecord::Base
           }]
         },
       feedElementType: "FeedItem"}
-    uri = URI.parse(TARGET_ORIGIN+CHATTER_FEED)
+    uri = URI.parse(TARGET_ORIGIN+CHATTER_FEED+"/news/"+user.sf_reference+"/feed-items")
     headers = {"Content-Type" => "application/json", "Authorization" => "Bearer #{user.oauth_token}"}
     http = Net::HTTP.new(uri.host,uri.port)
     http.use_ssl = true
