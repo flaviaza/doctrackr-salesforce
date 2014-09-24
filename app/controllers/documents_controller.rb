@@ -89,7 +89,6 @@ class DocumentsController < ApplicationController
 
   def callback
     @document = Document.find_by_dt_reference(params[:document_id])
-    @document.update_attribute(:status, 'active')
     @document.delay(run_at: 5.seconds.from_now).post_document_protected
     redirect_to @document
   end

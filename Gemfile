@@ -36,6 +36,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+gem 'bitly'
 gem 'delayed_job_active_record'
 gem 'oauth2'
 gem 'dotenv'
