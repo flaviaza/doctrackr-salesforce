@@ -8,13 +8,13 @@ class Document < ActiveRecord::Base
   CHATTER_FEED = "/services/data/v31.0/chatter/feeds"
 
   def post_document_protected
-    dt_document = DocTrackrEnterprise.get_document_info(dt_reference)
+    dt_document = DocTrackrEnterprise.get_document_info(dt_reference.to_s)
     data = {
       body: {
         messageSegments: [
         {
           type: "Text",
-          text: "#{name} has been protected with docTrackr. download at #{dt_document[:download_url]} "
+          text: "#{name} has been protected with docTrackr. download at #{dt_document['url']} "
           }]
         },
       feedElementType: "FeedItem"}
