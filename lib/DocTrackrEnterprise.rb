@@ -69,8 +69,9 @@ module DocTrackrEnterprise
       response = @token.get(API_URL+'/'+@user_id+'/documents/'+document_id).parsed
       response['policy'] = self.get_document_policy_info(response['policy_id'])
       response
-    rescue Error => e
+    rescue => e
       puts e
+      puts e.backtrace
     end
   end
 
