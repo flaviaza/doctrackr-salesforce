@@ -5,7 +5,7 @@ class Document < ActiveRecord::Base
 
   belongs_to :user
   TARGET_ORIGIN = "https://intralinks--poc1.cs8.my.salesforce.com"
-  CHATTER_FEED = "/services/data/v31.0/chatter/feeds"
+  CHATTER_FEED = "/services/data/v31.0/chatter/feed-elements"
 
   def post_document_protected
     data = {
