@@ -1,4 +1,8 @@
-<h1>New document</h1>
+<div class="alert alert-success"><%=t :success_html %></div>
+<h1><%=t :title %></h1>
+<img src="/images/IL.png" alt="Intralinks brand" class="brand pull-left"/>
+<h2><%=t :subtitle %></h2>
+<p><%=t :body_html %></p>
 <%= form_for(@document) do |f| %>
   <% if @document.errors.any? %>
     <div id="error_explanation">
@@ -12,13 +16,38 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :file %><br />
-    <%= f.file_field :file %>
+  <span class="label"><%= t :upload_label %></span>
+  <div class="upload">
+
+    <div class="field hidden">
+      <%= f.label(:file, 'Choose a file from your computer') %>
+      <%= f.file_field :file %>
+    </div>
+    <img src="/images/uploadWhiteArrow12.png" alt="upload" />
+    <span><%=t :upload_content_html %></span>
+  </div>
+  <span class="label"><%=t :permissions %></span>
+  <div class="privileges well">
+    <table class="privileges-table" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td></td>
+          <td class="dt-disabled"><%=t :can_view %></td>
+          <td><%=t :can_print %></td>
+          <td><%=t :can_edit %></td>
+        </tr>
+        <tr>
+          <td><%=t :can_do %></td>
+          <td><input type="checkbox" name="can_view" value="can_view" checked="" disabled=""></td>
+          <td><input type="checkbox" name="can_print" value="can_print"></td>
+          <td><input type="checkbox" name="can_edit" value="can_edit"></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <div class="actions">
-    <%= f.submit %>
+   <%= link_to 'Back', documents_path %> &nbsp; <%= f.submit %>
   </div>
 <% end %>
 
-<%= link_to 'Back', documents_path %>
+
