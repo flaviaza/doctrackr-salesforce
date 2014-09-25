@@ -3,9 +3,11 @@ class Document < ActiveRecord::Base
   attr_accessible :file, :status, :url, :last_event_offset
   attr_accessible :access_type
 
-  attr_accessor :file, :access_file
+  attr_accessor :file, :access_type
 
   attr_accessible :file
+
+  validates :dt_reference, presence: true
 
   belongs_to :user
   TARGET_ORIGIN = "https://intralinks--poc1.cs8.my.salesforce.com"

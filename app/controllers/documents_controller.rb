@@ -42,13 +42,14 @@ class DocumentsController < ApplicationController
   # POST /documents
   # POST /documents.json
   def create
-    @current_user = User.find(session[:user_id])
+    @current_user = User.find_by_id(session[:user_id])
     @document = Document.new(params[:document])
     @document.user = @current_user
-    @document.name = @document.file.original_filename
-    @document.status = 'pending'
-    #@document.dt_reference = DocTrackrEnterprise.secure_document(@document.file, "https://doctrackr-salesforce.herokuapp.com/documents/callback")
-
+    if @document.file && !document.file.empty?
+      @document.name = @document.file.original_filename
+      @document.status = 'pending'
+      #@document.dt_reference = DocTrackrEnterprise.secure_document(@document.file, "https://doctrackr-salesforce.herokuapp.com/documents/callback")
+    end
     respond_to do |format|
       if @document.save
         format.html { redirect_to @document, notice: 'Document was successfully created.' }

@@ -34,9 +34,9 @@
       <tbody>
         <tr>
           <td><%=t :can_do %></td>
-          <td><%= f.radio_button :access_file, "can_view", :checked => true %><i class="icon-view"></i></td>
-          <td><%= f.radio_button :access_file, "can_print"%><i class="icon-print"></i></td>
-          <td><%= f.radio_button :access_file, "can_edit"%><i class="icon-edit"></i></td>
+          <td><%= f.radio_button :access_type, "can_view", :checked => true %><i class="icon-view"></i></td>
+          <td><%= f.radio_button :access_type, "can_print"%><i class="icon-print"></i></td>
+          <td><%= f.radio_button :access_type, "can_edit"%><i class="icon-edit"></i></td>
         </tr>
       </tbody>
     </table>
