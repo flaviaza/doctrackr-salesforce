@@ -96,6 +96,7 @@ table td:first-child{
 .upload {
   display: block;
   position: relative;
+  overflow: hidden;
   width: 100%;
   border-radius: 3px 3px 3px 3px;
   color: #8d8d8d;
@@ -148,7 +149,7 @@ table td:first-child{
  display: none;
 }
 .uploaded-doc {
-  margin: 10px 0 20px;
+  margin: -20px 0 20px;
   padding: 0;
   list-style: none;
   width: 100%;
@@ -156,7 +157,6 @@ table td:first-child{
     font-size: 1.2em;
     padding: 10px;
     border-bottom: 1px solid #f4f4f4;
-    border-top: 1px solid #fbfbfb;
     &:before{
       display: inline-block;
       content: '\00a0';
@@ -168,4 +168,17 @@ table td:first-child{
     }
   }
 }
-
+[class*='icon-'] {
+  display: inline-block;
+  width: 24px;
+  height: 20px;
+  background: transparent url('../images/icons.png') left top no-repeat;
+  vertical-align: middle;
+  margin-left: 5px;
+  &.icon-print{
+    background-position: -157px 0;
+  }
+  &.icon-edit{
+    background-position: -80px 0;
+  }
+}

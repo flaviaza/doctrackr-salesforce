@@ -3,14 +3,12 @@
 
 en:
   title: "Upload and endcript a new document"
-  subtitle: "What is this?"
-  body_html: "Intralinks’s uses robust security mechanisms including dynamic access management and a Information Rights Management (IRM) system coupled with strong symmetric AES encryption.
-</br>
-With Intralinks, users can proactively and re-actively control who can view confidential documents. The added level of control helps to prevent data loss and ensure your documents are secure with industry standard encryption technologies."
+  subtitle: "How does this work?"
+  body_html: "With Intralinks IRM you can now track and control your files, even after having shared them outside of Salesforce. The added level of control helps to prevent data loss and ensure your documents are secure with industry standard encryption technologies."
   permissions: "2. Set the access rights of your document"
   upload_label: "1. Choose a file from your computer"
   upload_content_html: "<em>Upload files</em> or drag and drop to add files..."
-  can_do: "People who get this document:"
+  can_do: "People who get this document can:"
   can_view: "Can View"
   can_print: "Can Print"
   can_edit: "Can Edit"
