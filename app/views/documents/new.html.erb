@@ -5,22 +5,21 @@
 <p><%=t :body_html %></p>
 <%= form_for(@document) do |f| %>
   <% if @document.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h2>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2>Humm we need you to check <%= pluralize(@document.errors.count, "thing") %>:</h2>
 
       <ul>
       <% @document.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
+      <p>Then you can <b>try again</b> with a <b>different file</b></p>
     </div>
   <% end %>
-
   <span class="label"><%= t :upload_label %></span>
   <div class="upload">
 
     <div class="field hidden">
-      <%= f.label(:file, 'Choose a file from your computer') %>
       <%= f.file_field :file %>
     </div>
     <img src="/images/uploadWhiteArrow12.png" alt="upload" />

@@ -114,12 +114,15 @@ table td:first-child{
   .field:hover, .upload .field label:hover  {
     cursor: pointer;
   }
-  .field {
+  .field, .field input {
     display: block;
     position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     background: #fff;
+    margin: 0
   }
   img {
     vertical-align: middle;
@@ -130,23 +133,48 @@ table td:first-child{
 .hidden {
   opacity: 0;
 }
-.alert {
+.alert, #error_explanation.alert {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
   -webkit-transition: height 1s linear 2s; /* For Safari 3.1 to 6.0 */
   transition: height 1s linear 2s;
+  h2 {
+    margin: 10px 0;
+    &:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 .alert-success {
   color: #3c763d;
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
-.alert-danger {
+.alert-danger, #error_explanation.alert {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
+}
+#error_explanation.alert {
+  width: auto;
+  h2 {
+    background: transparent none;
+    color: #a94442;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 5px 0;
+    width: auto;
+  }
+  ul {
+    margin-bottom: 0;
+  }
 }
 .hide {
  display: none;
