@@ -1,5 +1,9 @@
 class Document < ActiveRecord::Base
   attr_accessible :dt_reference, :last_event_at, :name, :sf_reference
+  attr_accessible :file, :status, :url, :last_event_offset
+  attr_accessible :access_type
+
+  attr_accessor :file, :access_file
 
   attr_accessible :file
 
