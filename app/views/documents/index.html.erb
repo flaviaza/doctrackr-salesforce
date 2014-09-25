@@ -1,13 +1,40 @@
-<div class="dashboard">
-  <%= link_to 'Secure a new document', new_document_path, class: 'btn' %>
-  <select>
-    <option> Generate Report </option>
-  </select>
-  <%= link_to 'Jan 21, 2014 - Feb 21, 2014', '' %>
-  <h1>Dashboard</h1>
-  <img src="images/dashboard_map.png" alt="map and alerts" />
-  <img src="images/dashboard_doc.png" alt="documents" />
-  <img src="images/dashboard_group.png" alt="groups" />
+<div class="document-list dashboard">
+  <header>
+
+    <%= link_to 'Secure a new document', new_document_path, class: 'btn' %>
+  <div class="pull-right actions-menu">
+    <a class="btn">Unshare</a>
+    <a class="btn">Remove</a>
+  </div>
+  <h1>My documents</h1>
+  </header>
+  <div class="zen-navigation">
+    <div class="zen-searchBox">
+      <input type="text" title="Search All Files..." autocomplete="off" placeholder="Search All Files..." value=""/>
+      <a class="btn" href="#" title="Search">Search</a>
+    </div>
+  </div>
+  <table cellpadding="0" cellspacing="0">
+    <thead>
+      <tr>
+        <th class="selector"><input type="checkbox" name="" id="" value="" /></th>
+        <th class="doc-name">Document Name</th>
+        <th class="up-date">Secured on</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" name="" id="" value="" /></td>
+        <td><a href="" class="doc pdf">DocumentName.pdf</a></td>
+        <td>00/00/0000</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="" id="" value="" /></td>
+        <td><a href="" class="doc pdf">DocumentName.pdf</a></td>
+        <td>00/00/0000</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <% if false %>
