@@ -2,7 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  title: "Upload and endcript a new document"
+  title: "Secure & Track a new document"
   subtitle: "How does this work?"
   body_html: "With Intralinks IRM you can now track and control your files, even after having shared them outside of Salesforce. The added level of control helps to prevent data loss and ensure your documents are secure with industry standard encryption technologies."
   permissions: "2. Set the access rights of your document"
