@@ -25,8 +25,8 @@
     <img src="/images/uploadWhiteArrow12.png" alt="upload" />
     <span><%=t :upload_content_html %></span>
   </div>
-  <ul class="uploaded-doc">
-    <li class="doc pdf">DocumentName.pdf</li>
+  <ul class="uploaded-doc hidden">
+    <li id="file_name" class="doc pdf">DocumentName.pdf</li>
   </ul>
   <span class="label"><%=t :permissions %></span>
   <div class="privileges well">
@@ -47,3 +47,11 @@
 <% end %>
 
 
+<script>
+   $(document).ready(function(){
+     $('#document_file').change(function(e) {
+       $('#file_name').text($('#document_file').val());
+       $('.uploaded-doc ').removeClass('hidden');
+     });
+   });
+</script>
