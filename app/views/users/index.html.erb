@@ -1,3 +1,23 @@
+<div class="dashboard">
+  <header>
+
+    <%= link_to 'Secure a new document', new_document_path, class: 'btn' %>
+  <select>
+    <option> Generate Report </option>
+  </select>
+  <%= link_to 'Jan 21, 2014 - Feb 21, 2014', '' %>
+
+  <h1>Dashboard</h1>
+  </header>
+  <img src="images/dashboard_map.png" alt="map and alerts" />
+  <img src="images/dashboard_doc.png" alt="documents" />
+  <img src="images/dashboard_group.png" alt="groups" />
+</div>
+
+
+
+
+<% if false %>
 <h1>Listing users</h1>
 
 <table>
@@ -31,3 +51,4 @@
 <br />
 
 <%= link_to 'New User', new_user_path %>
+<% end %>
